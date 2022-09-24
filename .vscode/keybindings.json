@@ -1,0 +1,34 @@
+// 将键绑定放在此文件中以覆盖默认值auto[]
+[
+  // 定位文件位置
+  {
+    "key": "cmd+d cmd+w",
+    "command": "workbench.files.action.showActiveFileInExplorer"
+  },
+  // 切换块注释
+  {
+    "key": "shift+cmd+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+2 cmd+2",
+    "command": "explorer.newFile"
+  },
+  {
+    "key": "cmd+1 cmd+1",
+    "command": "explorer.newFolder"
+  },
+  // 新建文件
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerResourceIsFolder"
+  },
+  // 新建文件夹
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "explorerResourceIsFolder"
+  }
+]

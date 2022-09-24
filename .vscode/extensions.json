@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    // theme
+    "akamud.vscode-theme-onedark",
+    "wmaurer.change-case",
+    "streetsidesoftware.code-spell-checker",
+    "clinyong.vscode-css-modules",
+    "pucelle.vscode-css-navigation",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "evan-buss.font-switcher",
+    "wix.vscode-import-cost",
+    "alefragnani.project-manager",
+    "Gruntfuggly.todo-tree"
+  ]
+}
