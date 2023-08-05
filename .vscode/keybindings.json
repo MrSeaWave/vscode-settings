@@ -1,26 +1,154 @@
 // 将键绑定放在此文件中以覆盖默认值auto[]
 [
-  // 侧边栏定位当前文件
+  // 列出项目并打开选中的项目
   {
-    "key": "shift+cmd+r",
-    "command": "workbench.files.action.showActiveFileInExplorer"
+    "command": "projectManager.listGitProjects#sideBarGit",
+    "key": "cmd+o"
   },
-  // 切换块注释, https://user-images.githubusercontent.com/21967852/216941987-f3db2269-be25-4492-93d9-62845f6be144.png
   {
-    "key": "shift+cmd+/",
-    "command": "editor.action.blockComment",
-    "when": "editorTextFocus && !editorReadonly"
+    "command": "expand_region",
+    // 不断扩大选中
+    "key": "ctrl+=",
+    "when": "editorTextFocus"
   },
-  // 新建文件
   {
-    "key": "cmd+2 cmd+2",
-    "command": "explorer.newFile"
+    "command": "undo_expand_region",
+    // 不断缩小选中
+    "key": "ctrl+-",
+    "when": "editorTextFocus && editorHasSelection"
   },
-  // 新建文件夹
   {
-    "key": "cmd+1 cmd+1",
-    "command": "explorer.newFolder"
+    // 快速打印
+    "command": "turboConsoleLog.displayLogMessage",
+    "key": "cmd+i"
+  },
+  {
+    // 删除原有的快捷键
+    "command": "-turboConsoleLog.displayLogMessage",
+    "key": "ctrl+alt+l"
+  },
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  {
+    // 打开侧边栏自动聚焦在文件树上
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  {
+    // 新建文件
+    "command": "explorer.newFile",
+    "key": "a",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // 重命名文件
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // 复制文件
+    "command": "filesExplorer.copy",
+    "key": "c",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // 粘贴文件
+    "command": "filesExplorer.paste",
+    "key": "p",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // 删除文件
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // 将下一个查找匹配项添加到选择
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "key": "ctrl+n",
+    "when": "editorFocus"
+  },
+  {
+    // 删除原有的快捷键
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "key": "cmd+d",
+    "when": "editorFocus"
+  },
+  // {
+  //   "command": "-workbench.action.files.save",
+  //   "key": "cmd+s"
+  // },
+  // {
+  //   "command": "saveAll",
+  //   "key": "cmd+s"
+  // },
+  {
+    "command": "-extension.vim_cmd+d",
+    "key": "cmd+d",
+    "when": "editorTextFocus && vim.active && vim.use<D-d> && !inDebugRepl"
+  },
+  {
+    // 向右拆分编辑器
+    "command": "workbench.action.splitEditor",
+    "key": "cmd+d"
+  },
+  {
+    "command": "-workbench.action.splitEditor",
+    "key": "cmd+\\"
   }
+  // {
+  //   "command": "-undo",
+  //   "key": "cmd+z"
+  // },
+  // {
+  //   "command": "-interactiveEditor.unstash",
+  //   "key": "cmd+z",
+  //   "when": "interactiveEditorHasStashedSession && !editorReadonly"
+  // },
+  // {
+  //   "command": "workbench.action.toggleZenMode",
+  //   "key": "cmd+z"
+  // },
+  // {
+  //   "command": "-workbench.action.toggleZenMode",
+  //   "key": "cmd+k z"
+  // },
+  // {
+  //   "command": "workbench.action.terminal.toggleTerminal",
+  //   "key": "ctrl+\\",
+  //   "when": "terminal.active"
+  // },
+  // {
+  //   "command": "-workbench.action.terminal.toggleTerminal",
+  //   "key": "ctrl+`",
+  //   "when": "terminal.active"
+  // }
+  // 侧边栏定位当前文件
+  // {
+  //   "key": "shift+cmd+r",
+  //   "command": "workbench.files.action.showActiveFileInExplorer"
+  // },
+  // 切换块注释, https://user-images.githubusercontent.com/21967852/216941987-f3db2269-be25-4492-93d9-62845f6be144.png
+  // {
+  //   "key": "shift+cmd+/",
+  //   "command": "editor.action.blockComment",
+  //   "when": "editorTextFocus && !editorReadonly"
+  // }
+  // 新建文件
+  // {
+  //   "key": "cmd+2 cmd+2",
+  //   "command": "explorer.newFile"
+  // },
+  // // 新建文件夹
+  // {
+  //   "key": "cmd+1 cmd+1",
+  //   "command": "explorer.newFolder"
+  // }
   // // 新建文件
   // {
   //   "key": "a",

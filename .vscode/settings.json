@@ -1,117 +1,68 @@
 {
-  // 不需要监测改动或者甚至不需要显示在资源管理器内的文件夹、文件排除
-  // 不需要显示
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true
-  },
-  // 不需要监测改动
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/**": true,
-    "**/.hg/store/**": true,
-    "**/.docusaurus/**": true,
-    "**/dist/**": true
-  },
-  // 启用本地括号匹配
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.fontSize": 18,
-  "editor.fontLigatures": true,
-  "editor.fontFamily": "JetBrainsMono NF,Monaco, Menlo, 'Courier New', monospace",
-  "workbench.iconTheme": "material-icon-theme",
-  "debug.toolBarLocation": "docked",
-  // 以像素为单位控制字号。
-  "editor.wordWrap": "on",
-  "prettier.semi": true,
-  "prettier.singleQuote": true,
-  "gitlens.advanced.messages": {
-    // "suppressShowKeyBindingsNotice": true
-  },
-  "editor.tabSize": 2,
-  "files.associations": {
-    "*.jsx": "javascriptreact",
-    "*.js": "javascript",
-    "*.ts": "typescript",
-    "*.tsx": "typescriptreact",
-    "*.tpl": "typescript",
-    "*.cjson": "jsonc",
-    "*.wxss": "css",
-    "*.wxs": "javascript"
-  },
-  // lint
-  "js/ts.implicitProjectConfig.experimentalDecorators": true,
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    // 让 import 语句按照字母顺序进行排列，可能与prettier冲突：https://github.com/prettier/prettier-vscode/issues/716，引入https://github.com/prettier/prettier-vscode/issues/716#issuecomment-623931202 链接，使得codeActionsOnSave按顺序执行 (失效，不format后自动排序也会失效)
-    // "source.organizeImports"
-    "source.fixAll.eslint": true
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "vue",
-    "typescript",
-    "typescriptreact"
-  ],
-  // 不同语言的配置
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[javascript]": {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[wxml]": {
     "editor.defaultFormatter": "qiu8310.minapp-vscode"
   },
-  "minapp-vscode.wxmlFormatter": "prettier", //指定格式化工具
-  // "minapp-vscode.prettier": {
-  //   "parser": "html"
-  // },
-  "explorer.autoReveal": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "explorer.compactFolders": false,
-  "workbench.colorCustomizations": {
-    "editorUnnecessaryCode.border": "#59626f",
-    "statusBar.background": "#282C34",
-    "panel.background": "#282C34",
-    "sideBar.background": "#282C34",
-    "list.inactiveFocusOutline": "#3080F7",
-    "tab.activeBackground": "#4E545E" //活动选项卡的背景色
-    // "list.inactiveSelectionBackground": "#d8ca9e" //侧边栏选中未获得焦点颜色
-    // "list.inactiveSelectionBackground": "#3080F7" //侧边栏选中未获得焦点颜色
+  "codetour.showMarkers": true,
+  "debug.toolBarLocation": "docked",
+  "editor.accessibilitySupport": "off",
+  // 启用本地括号匹配
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    // 保存时自动添加缺失的依赖
+    "source.addMissingImports": true,
+    // 让 import 语句按照字母顺序进行排列，可能与prettier冲突：https://github.com/prettier/prettier-vscode/issues/716，引入https://github.com/prettier/prettier-vscode/issues/716#issuecomment-623931202 链接，使得codeActionsOnSave按顺序执行 (失效，不format后自动排序也会失效)
+    // "source.organizeImports"
+    "source.fixAll.eslint": true
   },
-
+  // "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 5,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrainsMono NF, Monaco, Menlo, 'Courier New', monospace",
+  // 连字效果
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "relative",
+  // 自动更改标签
+  "editor.linkedEditing": true,
+  // 关闭缩略图
+  "editor.minimap.enabled": false,
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.suggest.insertMode": "replace",
+  "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
         "name": "Storage",
         "scope": ["storage"],
         "settings": {
-          "foreground": "#C678DD",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#C678DD"
         }
       },
       {
@@ -125,16 +76,16 @@
         "name": "Support Type",
         "scope": ["support.type"],
         "settings": {
-          "foreground": "#C678DD",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#C678DD"
         }
       },
       {
         "name": "Entity Name Type",
         "scope": ["entity.name.type"],
         "settings": {
-          "foreground": "#98C379",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#98C379"
         }
       },
       {
@@ -158,12 +109,12 @@
           "keyword.control.as.tsx"
         ],
         "settings": {
-          "foreground": "#C678DD",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#C678DD"
         }
       },
       {
-        "name": "[VSCODE-CUSTOM] JS/TS Variable Other Readwrite",
+        "name": "[VSCODE-CUSTOM] JS/TS Variable Other ReadWrite",
         "scope": [
           "variable.other.readwrite.js",
           "variable.other.readwrite.ts",
@@ -195,8 +146,8 @@
         "name": "[VSCODE-CUSTOM] keyword.operator.expression.typeof",
         "scope": ["keyword.operator.expression.typeof"],
         "settings": {
-          "foreground": "#C678DD",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#C678DD"
         }
       },
       {
@@ -220,45 +171,136 @@
       }
     ]
   },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "Atom One Dark",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "editor.accessibilitySupport": "off",
-  "search.followSymlinks": false,
-  "editor.minimap.enabled": false,
-  "material-icon-theme.folders.theme": "specific",
-  "material-icon-theme.activeIconPack": "react_redux",
   "editor.unicodeHighlight.allowedLocales": {
-    "zh-hans": true
+    "zh-hans": true,
+    "zh-hant": true
   },
-  "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/.docusaurus"],
-  "jest.autoRun": "off",
-  // "js/ts.implicitProjectConfig.checkJs": true
-  // "javascript.validate.enable": false
-  "workbench.editor.wrapTabs": true,
-  "workbench.editor.enablePreview": false,
-  "playwright.reuseBrowser": true,
-
-  // 插件配置
-
-  // font-switcher 插件配置
-  "font-switcher.enableLivePreview": true,
-  "font-switcher.fontFamily": "'Jetbrains Mono','Fira Code', Monaco, Menlo, 'Courier New', monospace",
-  "fileheader.customMade": {
-    "Author": "Sea",
-    "Date": "Do not edit",
-    "LastEditors": "Sea",
-    "LastEditTime": "Do not edit"
+  // 以像素为单位控制字号。
+  "editor.wordWrap": "on",
+  "emmet.includeLanguages": {
+    "wxml": "html"
   },
+  "errorLens.fontStyleItalic": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "typescript",
+    "typescriptreact"
+  ],
+  // "minapp-vscode.prettier": {
+  //   "parser": "html"
+  // },
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // 文件嵌套,支持按名称去让文件按照一定规则展开收起
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "index.ts": "${dirname}.tsx,${dirname}.*.scss,style.*.scss,style.scss"
+  },
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "extensions.ignoreRecommendations": false,
   "fileheader.configObj": {
     "autoAdd": false, // 默认开启
     "createHeader": false, // 新建文件自动添加头部注释
     "dateFormat": "YYYY-MM-DD"
   },
-  "todo-tree.tree.showScanModeButton": false,
+  // 插件配置
+  "fileheader.customMade": {
+    "Author": "Sea",
+    "Date": "Do not edit",
+    "LastEditTime": "Do not edit",
+    "LastEditors": "Sea"
+  },
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.tpl": "typescript",
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
+    "*.wxs": "javascript",
+    "*.wxss": "css",
+    ".npmpackagejsonlintignore": "ignore"
+  },
+  // 不需要监测改动或者甚至不需要显示在资源管理器内的文件夹、文件排除
+  // 不需要显示
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/Thumbs.db": true
+  },
+  // 不需要监测改动
+  "files.watcherExclude": {
+    "**/.docusaurus/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/dist/**": true,
+    "**/node_modules/**": true
+  },
+  "git.openRepositoryInParentFolders": "never", // Highlight the local line if there's no selection range
+  "gitlens.advanced.messages": {
+    // "suppressShowKeyBindingsNotice": true
+  },
+  "jest.autoRun": "off",
+  // lint
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "material-icon-theme.activeIconPack": "react_redux",
+  "material-icon-theme.folders.theme": "specific",
+  "minapp-vscode.disableAutoConfig": true,
+  "minapp-vscode.wxmlFormatter": "prettier", //指定格式化工具
+  "openInGitHub.github.domain": "git.garena.com", // Custom GitHub domain
+  "openInGitHub.remote.branch": "master", // Name of the remote branch
+  "openInGitHub.remote.name": "origin", // Name of the remote repository
+  "openInGitHub.useLocalBranch": true, // Use the local branch instead of the fixed remote branch
+  "openInGitHub.useLocalLine": false,
+  "openInGitHub.useLocalRange": true, // Highlight the local selection range, if there's one
+  "playwright.reuseBrowser": true,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  // 项目文件路径
+  "projectManager.git.baseFolders": ["$home/workspace"],
+  "projectManager.sortList": "Recent",
+  "search.followSymlinks": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "sortJSON.orderOverride": [
+    "name",
+    "version",
+    "main",
+    "module",
+    "types",
+    "typings",
+    "files",
+    "publishConfig",
+    "repository",
+    "scripts",
+    "prefix",
+    "description",
+    "body"
+  ],
+  "sortJSON.orderUnderride": [
+    "resolutions",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "cSpell.enableFiletypes",
+    "cSpell.userWords"
+  ],
+  "svg.preview.mode": "svg",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/.docusaurus"],
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -268,56 +310,189 @@
     "[ ]",
     "[x]"
   ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.highlights.customHighlight": {
     "TODO": {
-      "type": "line",
-      "foreground": "#FFEB95"
+      "foreground": "#FFEB95",
+      "type": "line"
     }
   },
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.tree.showScanModeButton": false,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "update.showReleaseNotes": false,
+  // 在折叠下代码块下上下移动不会自动展开
+  "vim.foldfix": true,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "white",
+  // 搜索设定高亮
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    // 和 nvim 配置一样
+    {
+      "before": ["leader", "w"],
+      "commands": [":w!"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": [":q!"]
+    },
+    {
+      "before": ["leader", "x"],
+      "commands": [":x!"]
+    },
+    {
+      "after": ["g", "g", "V", "G"],
+      "before": ["<c-a>"]
+    },
+    {
+      // 同鼠标hover时展示的效果一样
+      "before": ["<leader>", "k"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      // 展示上一个错误
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      // 展示下一个错误
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "after": ["^"],
+      "before": ["H"]
+    },
+    {
+      "after": ["$"],
+      "before": ["L"]
+    },
+    {
+      // 快速切换boolean
+      "before": ["leader", "i"],
+      "commands": ["extension.toggleBool"]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vscode-office.openOutline": true,
+  "workbench.colorCustomizations": {
+    "editorUnnecessaryCode.border": "#59626f",
+    "list.inactiveFocusOutline": "#3080F7",
+    "panel.background": "#282C34",
+    "sideBar.background": "#282C34",
+    "statusBar.background": "#282C34",
+    "tab.activeBackground": "#4E545E" //活动选项卡的背景色
+    // "list.inactiveSelectionBackground": "#d8ca9e" //侧边栏选中未获得焦点颜色
+    // "list.inactiveSelectionBackground": "#3080F7" //侧边栏选中未获得焦点颜色
+  },
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.untitled.hint": "hidden",
+  // "js/ts.implicitProjectConfig.checkJs": true
+  // "javascript.validate.enable": false
+  "workbench.editor.wrapTabs": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.editor": "json",
+  // "workbench.startupEditor": "newUntitledFile",
+  "workbench.startupEditor": "readme",
+  "zenMode.hideActivityBar": false,
+  // "window.zoomLevel": 1,
+  "zenMode.hideLineNumbers": false,
   "cSpell.enableFiletypes": ["wxml"],
   "cSpell.userWords": [
+    "ahooks",
     "antd",
     "browserslist",
+    "cjson",
+    "codetour",
     "commitlint",
     "databoard",
     "Diffable",
     "dingtalk",
+    "docgen",
     "dotfiles",
     "emtransit",
     "errexp",
+    "esbenp",
+    "execa",
+    "fileheader",
+    "foldfix",
+    "garena",
+    "GOOGLEPLUS",
+    "Hailang",
     "healthcheck",
+    "highlightedyank",
+    "hlsearch",
+    "Hocs",
+    "Hotspot",
+    "hotspots",
+    "iframe",
+    "immer",
     "jsapi",
     "lutra",
+    "mdast",
+    "Menlo",
     "metalsmith",
     "microfe",
     "Microsite",
+    "micrositepage",
+    "minapp",
     "mobilemall",
     "npmjs",
+    "npmpackagejsonlintignore",
     "nprogress",
+    "nvim",
+    "outfile",
+    "pagebuilder",
     "pcmall",
+    "Pinterest",
     "pnpm",
     "precommit",
     "prettierrc",
     "qiankun",
+    "RCMD",
+    "readwrite",
+    "reduxjs",
     "removeprefix",
+    "rfmd",
+    "rgba",
+    "rmcd",
+    "searc",
     "shopee",
     "shopid",
     "SPDL",
+    "spex",
+    "strikethrough",
+    "Swiper",
     "swjs",
+    "testid",
     "tiktok",
     "TRANSIFY",
+    "tsrfmd",
     "typecheck",
     "umijs",
     "umirc",
+    "Underride",
     "Unitless",
     "unmount",
+    "unstash",
+    "VITE",
+    "webp",
+    "wxml",
+    "wxss",
     "xprofile",
-    "xtransit"
-  ],
-  "svg.preview.mode": "svg",
-  "emmet.includeLanguages": {
-    "wxml": "html"
-  },
-  "minapp-vscode.disableAutoConfig": true
+    "xtransit",
+    "zustand"
+  ]
 }

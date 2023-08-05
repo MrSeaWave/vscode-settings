@@ -11,6 +11,7 @@
     "evan-buss.font-switcher",
     "wix.vscode-import-cost",
     "alefragnani.project-manager",
-    "Gruntfuggly.todo-tree"
+    "Gruntfuggly.todo-tree",
+    "vscodevim.vim"
   ]
 }
