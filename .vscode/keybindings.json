@@ -38,6 +38,13 @@
     "when": "editorTextFocus"
   },
   {
+    // 打开侧边栏自动聚焦在活动文件
+    // https://stackoverflow.com/questions/47872486/how-to-show-current-file-in-sidebar-explorer-with-focus-in-visual-studio-code
+    "key": "ctrl+e",
+    "command": "workbench.files.action.showActiveFileInExplorer",
+    "when": "editorTextFocus"
+  },
+  {
     // 新建文件
     "command": "explorer.newFile",
     "key": "a",
@@ -100,7 +107,7 @@
   {
     "command": "-workbench.action.splitEditor",
     "key": "cmd+\\"
-  }
+  },
   // {
   //   "command": "-undo",
   //   "key": "cmd+z"
@@ -155,10 +162,10 @@
   //   "command": "explorer.newFile",
   //   "when": "explorerResourceIsFolder"
   // },
-  // // 新建文件夹
-  // {
-  //   "key": "shift+a",
-  //   "command": "explorer.newFolder",
-  //   "when": "explorerResourceIsFolder"
-  // }
+  // 新建文件夹
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  }
 ]

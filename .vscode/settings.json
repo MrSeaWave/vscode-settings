@@ -321,13 +321,29 @@
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
+  // 返回normal时切换输入法至英文
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select {im}",
+  // 快速跳转
+  "vim.easymotion": true,
   // 在折叠下代码块下上下移动不会自动展开
   "vim.foldfix": true,
+  // 下面定义的按键将交由vscode进行处理，而不是vscode-vim插件
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-c": false,
+    "<C-f>": false,
+    "C-v": false,
+    "C-w": false
+  },
   "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.textColor": "white",
   // 搜索设定高亮
   "vim.hlsearch": true,
+  "vim.ignorecase": false,
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -384,6 +400,18 @@
       "commands": ["extension.toggleBool"]
     }
   ],
+  "vim.sneak": true,
+  // 会影响性能，且会随时改变 workbench.colorCustomizations 所对应的数据，谨慎开启
+  "vim.statusBarColorControl": false,
+  "vim.statusBarColors.insert": "#5f0000",
+  "vim.statusBarColors.normal": "#005f5f",
+  "vim.statusBarColors.replace": "#00000",
+  "vim.statusBarColors.visual": "#5f00af",
+  "vim.statusBarColors.visualblock": "#86592d",
+  "vim.statusBarColors.visualline": "#005f5f",
+  "vim.surround": true,
+  // 优先使用Vim的键位
+  "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
   "vscode-office.openOutline": true,
   "workbench.colorCustomizations": {
@@ -407,8 +435,10 @@
   // "workbench.startupEditor": "newUntitledFile",
   "workbench.startupEditor": "readme",
   "zenMode.hideActivityBar": false,
+  // "zenMode.hideTabs": false,
   // "window.zoomLevel": 1,
   "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
   "cSpell.enableFiletypes": ["wxml"],
   "cSpell.userWords": [
     "ahooks",
@@ -422,6 +452,7 @@
     "dingtalk",
     "docgen",
     "dotfiles",
+    "easymotion",
     "emtransit",
     "errexp",
     "esbenp",
@@ -438,8 +469,10 @@
     "Hotspot",
     "hotspots",
     "iframe",
+    "ignorecase",
     "immer",
     "jsapi",
+    "keylayout",
     "lutra",
     "mdast",
     "Menlo",
@@ -456,6 +489,7 @@
     "outfile",
     "pagebuilder",
     "pcmall",
+    "pcrw",
     "Pinterest",
     "pnpm",
     "precommit",
@@ -471,6 +505,7 @@
     "searc",
     "shopee",
     "shopid",
+    "spacebar",
     "SPDL",
     "spex",
     "strikethrough",
@@ -480,6 +515,7 @@
     "tiktok",
     "TRANSIFY",
     "tsrfmd",
+    "tsup",
     "typecheck",
     "umijs",
     "umirc",
@@ -487,6 +523,8 @@
     "Unitless",
     "unmount",
     "unstash",
+    "visualblock",
+    "visualline",
     "VITE",
     "webp",
     "wxml",
