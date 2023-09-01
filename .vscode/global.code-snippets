@@ -1,4 +1,6 @@
 {
+  // https://juejin.cn/post/6844903869424599053
+  // https://snippet-generator.app/
   "import": {
     "scope": "javascript,typescript",
     "prefix": "im",
@@ -8,7 +10,120 @@
   "export-all": {
     "scope": "javascript,typescript",
     "prefix": "ex",
-    "body": ["export * from '$1';"],
+    "body": ["export * from '$0';"],
     "description": "Export all modules"
+  },
+  "reactFunctionMemoComponentWithDisplayName": {
+    "description": "Creates a React Memo Function Component with ES7 module system with displayName",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "rfmd",
+    "body": [
+      "import React, { memo } from 'react'",
+      "",
+      "export const ${1:${TM_FILENAME_BASE}} = memo((props) => {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "})",
+      "",
+      "${1:${TM_FILENAME_BASE}}.displayName = '${1:${TM_FILENAME_BASE}}'"
+    ]
+  },
+  // https://stackoverflow.com/questions/52998469/how-to-use-react-memo-with-react-redux-connect
+  "reactFunctionMemoComponentWithHocs": {
+    "description": "Creates a React Memo Function Component with hocs",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "rfmch",
+    "body": [
+      "import React, { memo } from 'react'",
+      "import { compose } from 'redux'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}Component = (props) => {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "}",
+      "",
+      "export const ${1:${TM_FILENAME_BASE}} = compose(",
+      "  // any other HOC",
+      "  memo",
+      ")(${1:${TM_FILENAME_BASE}}Component);"
+    ]
+  },
+  "reactFunctionMemoComponentWithRedux": {
+    "description": "Creates a React Memo Function Component with redux",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "rfmcredux",
+    "body": [
+      "import React, { memo } from 'react'",
+      "import { compose } from 'redux'",
+      "import { connect } from 'react-redux'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}Component = (props) => {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "}",
+      "",
+      "const mapStateToProps = state => ({});",
+      "",
+      "const actionCreators = {};",
+      "",
+      "export const ${1:${TM_FILENAME_BASE}} = compose(",
+      "  connect(mapStateToProps, actionCreators),",
+      "  // any other HOC",
+      "  memo",
+      ")(${1:${TM_FILENAME_BASE}}Component);"
+    ]
+  },
+  // ========================== TS ==========================
+  "tsReactFunctionMemoComponentWithDisplayName": {
+    "description": "Creates a React Memo Function Component with ES7 module system with displayName",
+    "scope": "typescript,typescriptreact",
+    "prefix": "tsrfmd",
+    "body": [
+      "import React, { memo } from 'react'",
+      "",
+      "interface Props {}",
+      "",
+      "export const ${1:${TM_FILENAME_BASE}}:React.FC<Props> = memo((props) => {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "})",
+      "",
+      "${1:${TM_FILENAME_BASE}}.displayName = '${1:${TM_FILENAME_BASE}}'"
+    ]
+  },
+  // ts memo forwardRef https://github.com/jsx-eslint/eslint-plugin-react/blob/747fad0e06e73155616df62575626f7953260dec/tests/lib/rules/display-name.js#L673
+  "tsReactFunctionMemoizedForwardRefComponentLike": {
+    "description": "Creates a React Memo ForwardRef Function Component with ES7 module system with displayName",
+    "scope": "typescript,typescriptreact",
+    "prefix": "tsrfmdForwardRef",
+    "body": [
+      "import React, { forwardRef, memo } from 'react'",
+      "",
+      "interface Props {}",
+      "",
+      // "type RefType=HTMLDivElement",
+      "",
+      "function Component(props: Props, ref: React.LegacyRef<HTMLDivElement>) {",
+      "  return <div ref={ref}>Component</div>;",
+      "}",
+      "",
+      // "export const ${1:${TM_FILENAME_BASE}} = memo(forwardRef<RefType,Props>(Component));",
+      "export const ${1:${TM_FILENAME_BASE}} = memo(forwardRef(Component));",
+      "",
+      "${1:${TM_FILENAME_BASE}}.displayName = '${1:${TM_FILENAME_BASE}}';"
+    ]
+  },
+  // ========================== COMMENT ==========================
+  "commentWith//": {
+    "description": "Creates COMMENT",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact,scss,css,less",
+    "prefix": "c-s",
+    "body": [
+      "// ========================== ${1:COMMENT} =========================="
+    ]
   }
 }
