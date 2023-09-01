@@ -270,7 +270,7 @@
   "prettier.singleQuote": true,
   // 项目文件路径
   "projectManager.git.baseFolders": ["$home/workspace"],
-  "projectManager.sortList": "Recent",
+  "projectManager.sortList": "Name",
   "search.followSymlinks": false,
   "security.workspace.trust.untrustedFiles": "open",
   "sortJSON.orderOverride": [
@@ -286,7 +286,9 @@
     "scripts",
     "prefix",
     "description",
-    "body"
+    "body",
+    "before",
+    "after"
   ],
   "sortJSON.orderUnderride": [
     "resolutions",
@@ -333,11 +335,14 @@
   // 下面定义的按键将交由vscode进行处理，而不是vscode-vim插件
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-c": false,
+    "<C-c>": false,
     "<C-f>": false,
-    "C-v": false,
-    "C-w": false
+    // vim: Visual Block --> <C-v> or <C-q>,<C-v> 使用vscode自身命令，
+    // https://github.com/VSCodeVim/Vim/pull/2762/files
+    // "<C-v>": false,
+    "<C-w>": false
   },
+  // "vim.overrideCopy": false,
   "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.textColor": "white",
@@ -364,8 +369,8 @@
       "commands": [":x!"]
     },
     {
-      "after": ["g", "g", "V", "G"],
-      "before": ["<c-a>"]
+      "before": ["<c-a>"],
+      "after": ["g", "g", "V", "G"]
     },
     {
       // 同鼠标hover时展示的效果一样
@@ -387,12 +392,14 @@
       "commands": ["editor.action.quickFix"]
     },
     {
-      "after": ["^"],
-      "before": ["H"]
+      // 行首
+      "before": ["H"],
+      "after": ["^"]
     },
     {
-      "after": ["$"],
-      "before": ["L"]
+      // 行尾
+      "before": ["L"],
+      "after": ["$"]
     },
     {
       // 快速切换boolean
@@ -413,6 +420,18 @@
   // 优先使用Vim的键位
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindings": [
+    {
+      // 行首
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      // 行尾
+      "before": ["L"],
+      "after": ["g", "_"]
+    }
+  ],
   "vscode-office.openOutline": true,
   "workbench.colorCustomizations": {
     "editorUnnecessaryCode.border": "#59626f",
@@ -447,6 +466,8 @@
     "cjson",
     "codetour",
     "commitlint",
+    "corepack",
+    "customfield",
     "databoard",
     "Diffable",
     "dingtalk",
@@ -460,6 +481,7 @@
     "fileheader",
     "foldfix",
     "garena",
+    "gitbeaker",
     "GOOGLEPLUS",
     "Hailang",
     "healthcheck",
@@ -470,8 +492,11 @@
     "hotspots",
     "iframe",
     "ignorecase",
+    "imbot",
     "immer",
+    "interruptible",
     "jsapi",
+    "karabiner",
     "keylayout",
     "lutra",
     "mdast",
@@ -481,6 +506,8 @@
     "Microsite",
     "micrositepage",
     "minapp",
+    "Minio",
+    "mmdd",
     "mobilemall",
     "npmjs",
     "npmpackagejsonlintignore",
@@ -488,6 +515,7 @@
     "nvim",
     "outfile",
     "pagebuilder",
+    "Pbcm",
     "pcmall",
     "pcrw",
     "Pinterest",
@@ -503,11 +531,14 @@
     "rgba",
     "rmcd",
     "searc",
+    "seatalk",
     "shopee",
+    "shopeemobile",
     "shopid",
     "spacebar",
     "SPDL",
     "spex",
+    "SPPT",
     "strikethrough",
     "Swiper",
     "swjs",
