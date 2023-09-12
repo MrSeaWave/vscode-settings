@@ -336,7 +336,7 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-c>": false,
-    "<C-f>": false,
+    // "<C-f>": false,
     // vim: Visual Block --> <C-v> or <C-q>,<C-v> 使用vscode自身命令，
     // https://github.com/VSCodeVim/Vim/pull/2762/files
     // "<C-v>": false,
@@ -399,12 +399,43 @@
     {
       // 行尾
       "before": ["L"],
-      "after": ["$"]
+      "after": ["g", "_"]
+    },
+    {
+      // 向下移动5行
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      // 向上移动5行
+      "before": ["K"],
+      "after": ["5", "k"]
     },
     {
       // 快速切换boolean
       "before": ["leader", "i"],
       "commands": ["extension.toggleBool"]
+    },
+    {
+      // 存在递归映射的情况（如 f → s → c l），所以在 normalModeKeyBindingsNonRecursive 添加
+      // sneak,f--->s 让s S 恢复为最原始的功能
+      "before": ["f"],
+      "after": ["s"]
+    },
+    {
+      // sneak, F--->S
+      "before": ["F"],
+      "after": ["S"]
+    },
+    {
+      // sneak  让s S 恢复为最原始的功能
+      "before": ["s"],
+      "after": ["c", "l"]
+    },
+    {
+      // sneak  让s S 恢复为最原始的功能
+      "before": ["S"],
+      "after": ["^", "C"]
     }
   ],
   "vim.sneak": true,
@@ -430,10 +461,43 @@
       // 行尾
       "before": ["L"],
       "after": ["g", "_"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      // visual 模式下放在哪里都可以
+      // sneak,f--->s
+      // sneak 本身不支持可视化模式下的 S，所以无需映射 F-->S
+      "before": ["f"],
+      "after": ["s"]
+    }
+  ],
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    {
+      // sneak 在 operator-pending 模式 下是 z 与 Z，而不是 s
+      "before": ["f"],
+      "after": ["z"]
+    },
+    {
+      "before": ["F"],
+      "after": ["Z"]
     }
   ],
   "vscode-office.openOutline": true,
   "workbench.colorCustomizations": {
+    //设置用户选中代码段的颜色,鼠标双击选中后的颜色
+    // "editor.selectionBackground": "#2919ff",
+    //鼠标单击选中后的颜色
+    // "editor.selectionHighlightBackground": "#ffffff10",
+    // "editor.selectionHighlightBorder": "#ddd",
     "editorUnnecessaryCode.border": "#59626f",
     "list.inactiveFocusOutline": "#3080F7",
     "panel.background": "#282C34",
@@ -492,6 +556,7 @@
     "hotspots",
     "iframe",
     "ignorecase",
+    "IIFE",
     "imbot",
     "immer",
     "interruptible",
@@ -563,5 +628,6 @@
     "xprofile",
     "xtransit",
     "zustand"
-  ]
+  ],
+  "window.commandCenter": false
 }
