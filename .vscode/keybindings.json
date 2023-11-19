@@ -40,7 +40,7 @@
   {
     // 打开侧边栏自动聚焦在活动文件
     // https://stackoverflow.com/questions/47872486/how-to-show-current-file-in-sidebar-explorer-with-focus-in-visual-studio-code
-    "key": "ctrl+e",
+    "key": "f11",
     "command": "workbench.files.action.showActiveFileInExplorer",
     "when": "editorTextFocus"
   },
@@ -167,5 +167,23 @@
     "key": "shift+a",
     "command": "explorer.newFolder",
     "when": "filesExplorerFocus && !inputFocus"
+  },
+  // {
+  //   "key": "o",
+  //   "command": "list.select",
+  //   "when": "listFocus && !inputFocus"
+  // }
+  // Open terminal in directory of currently opened file
+  // https://stackoverflow.com/a/58311671/9065011
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.terminal.newWithCwd",
+    "args": {
+      "cwd": "${fileDirname}"
+    }
+  },
+  {
+    "key": "cmd+o",
+    "command": "projectManager.listProjectsNewWindow"
   }
 ]

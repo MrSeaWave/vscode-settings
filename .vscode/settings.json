@@ -24,6 +24,7 @@
     "editor.defaultFormatter": "qiu8310.minapp-vscode"
   },
   "codetour.showMarkers": true,
+  "debug.javascript.autoAttachFilter": "smart",
   "debug.toolBarLocation": "docked",
   "editor.accessibilitySupport": "off",
   // 启用本地括号匹配
@@ -180,6 +181,7 @@
   "emmet.includeLanguages": {
     "wxml": "html"
   },
+  "errorLens.enabledDiagnosticLevels": ["error", "info"],
   "errorLens.fontStyleItalic": true,
   "eslint.codeAction.showDocumentation": {
     "enable": true
@@ -202,7 +204,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "index.ts": "${dirname}.tsx,${dirname}.*.scss,style.*.scss,style.scss"
+    // "index.ts": "${dirname}.tsx,${dirname}.*.scss,style.*.scss,style.scss"
   },
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "extensions.ignoreRecommendations": false,
@@ -271,6 +273,10 @@
   // 项目文件路径
   "projectManager.git.baseFolders": ["$home/workspace"],
   "projectManager.sortList": "Name",
+  "redhat.telemetry.enabled": true,
+  "remote.SSH.remotePlatform": {
+    "sandbox.7csgjd.csb": "linux"
+  },
   "search.followSymlinks": false,
   "security.workspace.trust.untrustedFiles": "open",
   "sortJSON.orderOverride": [
@@ -299,6 +305,7 @@
     "cSpell.userWords"
   ],
   "svg.preview.mode": "svg",
+  "terminal.external.osxExec": "kitty.app",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
@@ -323,7 +330,6 @@
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
-  // 返回normal时切换输入法至英文
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
@@ -438,6 +444,17 @@
       "after": ["^", "C"]
     }
   ],
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    {
+      // sneak 在 operator-pending 模式 下是 z 与 Z，而不是 s
+      "before": ["f"],
+      "after": ["z"]
+    },
+    {
+      "before": ["F"],
+      "after": ["Z"]
+    }
+  ],
   "vim.sneak": true,
   // 会影响性能，且会随时改变 workbench.colorCustomizations 所对应的数据，谨慎开启
   "vim.statusBarColorControl": false,
@@ -480,18 +497,8 @@
       "after": ["s"]
     }
   ],
-  "vim.operatorPendingModeKeyBindingsNonRecursive": [
-    {
-      // sneak 在 operator-pending 模式 下是 z 与 Z，而不是 s
-      "before": ["f"],
-      "after": ["z"]
-    },
-    {
-      "before": ["F"],
-      "after": ["Z"]
-    }
-  ],
   "vscode-office.openOutline": true,
+  "window.commandCenter": false,
   "workbench.colorCustomizations": {
     //设置用户选中代码段的颜色,鼠标双击选中后的颜色
     // "editor.selectionBackground": "#2919ff",
@@ -508,8 +515,8 @@
     // "list.inactiveSelectionBackground": "#3080F7" //侧边栏选中未获得焦点颜色
   },
   "workbench.colorTheme": "Atom One Dark",
+  "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.untitled.hint": "hidden",
   // "js/ts.implicitProjectConfig.checkJs": true
   // "javascript.validate.enable": false
   "workbench.editor.wrapTabs": true,
@@ -578,17 +585,20 @@
     "npmpackagejsonlintignore",
     "nprogress",
     "nvim",
+    "oneline",
     "outfile",
     "pagebuilder",
     "Pbcm",
     "pcmall",
     "pcrw",
     "Pinterest",
+    "pkgjsonlint",
     "pnpm",
     "precommit",
     "prettierrc",
     "qiankun",
     "RCMD",
+    "rcompare",
     "readwrite",
     "reduxjs",
     "removeprefix",
@@ -605,6 +615,7 @@
     "spex",
     "SPPT",
     "strikethrough",
+    "stylelint",
     "Swiper",
     "swjs",
     "testid",
@@ -616,6 +627,7 @@
     "umijs",
     "umirc",
     "Underride",
+    "unfollow",
     "Unitless",
     "unmount",
     "unstash",
@@ -628,6 +640,5 @@
     "xprofile",
     "xtransit",
     "zustand"
-  ],
-  "window.commandCenter": false
+  ]
 }
