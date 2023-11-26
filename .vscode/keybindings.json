@@ -6,6 +6,12 @@
     "key": "cmd+o"
   },
   {
+    // 删除原有的键绑定，因为影响了vim的窗口管理
+    "key": "ctrl+w",
+    "command": "-expand_region",
+    "when": "editorTextFocus"
+  },
+  {
     "command": "expand_region",
     // 不断扩大选中
     "key": "ctrl+=",
@@ -185,5 +191,56 @@
   {
     "key": "cmd+o",
     "command": "projectManager.listProjectsNewWindow"
+  },
+  {
+    // 删除键位绑定，影响vim，可以用 altTab 软件的cmd+` 代替
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "-workbench.view.debug",
+    "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "workbench.action.splitEditorOrthogonal"
+  },
+  {
+    "key": "cmd+k cmd+\\",
+    "command": "-workbench.action.splitEditorOrthogonal"
+  },
+  {
+    // 窗口切换
+    "key": "shift+left",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal'",
+    "args": {
+      "after": ["<c-w>", "h"]
+    }
+  },
+  {
+    "key": "shift+right",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal'",
+    "args": {
+      "after": ["<c-w>", "l"]
+    }
+  },
+  {
+    "key": "shift+up",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal'",
+    "args": {
+      "after": ["<c-w>", "k"]
+    }
+  },
+  {
+    "key": "shift+down",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal'",
+    "args": {
+      "after": ["<c-w>", "j"]
+    }
   }
 ]

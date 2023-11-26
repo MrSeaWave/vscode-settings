@@ -24,7 +24,7 @@
     "editor.defaultFormatter": "qiu8310.minapp-vscode"
   },
   "codetour.showMarkers": true,
-  "debug.javascript.autoAttachFilter": "smart",
+  "debug.javascript.autoAttachFilter": "disabled",
   "debug.toolBarLocation": "docked",
   "editor.accessibilitySupport": "off",
   // 启用本地括号匹配
@@ -341,12 +341,14 @@
   // 下面定义的按键将交由vscode进行处理，而不是vscode-vim插件
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-c>": false,
+    "<C-c>": false
     // "<C-f>": false,
     // vim: Visual Block --> <C-v> or <C-q>,<C-v> 使用vscode自身命令，
     // https://github.com/VSCodeVim/Vim/pull/2762/files
     // "<C-v>": false,
-    "<C-w>": false
+    // 使用系统的cmd+w，关闭窗口，但是这样会影响使用vim的ctrl+w的窗口管理方式
+    // 在Mac上不设定，也可以使用系统的cmd+w，关闭窗口,同时ctrl+w也会生效
+    // "<C-w>": false
   },
   // "vim.overrideCopy": false,
   "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
