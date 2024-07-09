@@ -73,121 +73,124 @@
   "editor.stickyScroll.enabled": true,
   "editor.suggest.insertMode": "replace",
   "editor.tabSize": 2,
+  // https://code.visualstudio.com/api/references/theme-color
   "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "name": "Storage",
-        "scope": ["storage"],
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": "#C678DD"
+    "[Atom One Dark]": {
+      "textMateRules": [
+        {
+          "name": "Storage",
+          "scope": ["storage"],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#C678DD"
+          }
+        },
+        {
+          "name": "Keyword Operator",
+          "scope": ["keyword.operator"],
+          "settings": {
+            "foreground": "#C678DD"
+          }
+        },
+        {
+          "name": "Support Type",
+          "scope": ["support.type"],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#C678DD"
+          }
+        },
+        {
+          "name": "Entity Name Type",
+          "scope": ["entity.name.type"],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#98C379"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Property Definition Variable",
+          "scope": [
+            "meta.definition.property.js variable",
+            "meta.definition.property.ts variable",
+            "meta.definition.property.jsx variable",
+            "meta.definition.property.tsx variable"
+          ],
+          "settings": {
+            "foreground": "#E06C75"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Keyword Control As",
+          "scope": [
+            "keyword.control.as.js",
+            "keyword.control.as.ts",
+            "keyword.control.as.jsx",
+            "keyword.control.as.tsx"
+          ],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#C678DD"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Variable Other ReadWrite",
+          "scope": [
+            "variable.other.readwrite.js",
+            "variable.other.readwrite.ts",
+            "variable.other.readwrite.tsx"
+          ],
+          "settings": {
+            "foreground": "#D19A66"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS 重定义变量",
+          "scope": [
+            "meta.object-binding-pattern-variable.js variable.other.readwrite.js",
+            "meta.object-binding-pattern-variable.jsx variable.other.readwrite.jsx",
+            "meta.object-binding-pattern-variable.ts variable.other.readwrite.ts"
+          ],
+          "settings": {
+            "foreground": "#ABB2BF"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS new 方法",
+          "scope": ["new.expr entity.name.function"],
+          "settings": {
+            "foreground": "#E5C07B"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] keyword.operator.expression.typeof",
+          "scope": ["keyword.operator.expression.typeof"],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#C678DD"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] TS/JS Keyword Operator",
+          "scope": [
+            "source.ts keyword.operator",
+            "source.tsx keyword.operator",
+            "source.js keyword.operator",
+            "source.jsx keyword.operator"
+          ],
+          "settings": {
+            "foreground": "#ABB2BF"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Type Module",
+          "scope": "entity.name.type.module.js,entity.name.type.module.ts,entity.name.type.module.jsx,entity.name.type.module.tsx",
+          "settings": {
+            "foreground": "#C3D3DE"
+          }
         }
-      },
-      {
-        "name": "Keyword Operator",
-        "scope": ["keyword.operator"],
-        "settings": {
-          "foreground": "#C678DD"
-        }
-      },
-      {
-        "name": "Support Type",
-        "scope": ["support.type"],
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": "#C678DD"
-        }
-      },
-      {
-        "name": "Entity Name Type",
-        "scope": ["entity.name.type"],
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": "#98C379"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] JS/TS Property Definition Variable",
-        "scope": [
-          "meta.definition.property.js variable",
-          "meta.definition.property.ts variable",
-          "meta.definition.property.jsx variable",
-          "meta.definition.property.tsx variable"
-        ],
-        "settings": {
-          "foreground": "#E06C75"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] JS/TS Keyword Control As",
-        "scope": [
-          "keyword.control.as.js",
-          "keyword.control.as.ts",
-          "keyword.control.as.jsx",
-          "keyword.control.as.tsx"
-        ],
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": "#C678DD"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] JS/TS Variable Other ReadWrite",
-        "scope": [
-          "variable.other.readwrite.js",
-          "variable.other.readwrite.ts",
-          "variable.other.readwrite.tsx"
-        ],
-        "settings": {
-          "foreground": "#D19A66"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] JS/TS 重定义变量",
-        "scope": [
-          "meta.object-binding-pattern-variable.js variable.other.readwrite.js",
-          "meta.object-binding-pattern-variable.jsx variable.other.readwrite.jsx",
-          "meta.object-binding-pattern-variable.ts variable.other.readwrite.ts"
-        ],
-        "settings": {
-          "foreground": "#ABB2BF"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] JS/TS new 方法",
-        "scope": ["new.expr entity.name.function"],
-        "settings": {
-          "foreground": "#E5C07B"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] keyword.operator.expression.typeof",
-        "scope": ["keyword.operator.expression.typeof"],
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": "#C678DD"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] TS/JS Keyword Operator",
-        "scope": [
-          "source.ts keyword.operator",
-          "source.tsx keyword.operator",
-          "source.js keyword.operator",
-          "source.jsx keyword.operator"
-        ],
-        "settings": {
-          "foreground": "#ABB2BF"
-        }
-      },
-      {
-        "name": "[VSCODE-CUSTOM] JS/TS Type Module",
-        "scope": "entity.name.type.module.js,entity.name.type.module.ts,entity.name.type.module.jsx,entity.name.type.module.tsx",
-        "settings": {
-          "foreground": "#C3D3DE"
-        }
-      }
-    ]
+      ]
+    }
   },
   "editor.unicodeHighlight.allowedLocales": {
     "zh-hans": true,
