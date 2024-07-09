@@ -1,4 +1,7 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -11,8 +14,20 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[less]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -26,20 +41,22 @@
   "codetour.showMarkers": true,
   "debug.javascript.autoAttachFilter": "disabled",
   "debug.toolBarLocation": "docked",
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.accessibilitySupport": "off",
   // 启用本地括号匹配
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
     // 保存时自动添加缺失的依赖
-    "source.addMissingImports": true,
+    "source.addMissingImports": "explicit",
     // 让 import 语句按照字母顺序进行排列，可能与prettier冲突：https://github.com/prettier/prettier-vscode/issues/716，引入https://github.com/prettier/prettier-vscode/issues/716#issuecomment-623931202 链接，使得codeActionsOnSave按顺序执行 (失效，不format后自动排序也会失效)
     // "source.organizeImports"
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   // "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 5,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "JetBrainsMono NF, Monaco, Menlo, 'Courier New', monospace",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Monaco, Menlo, 'Courier New', monospace",
   // 连字效果
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
@@ -265,11 +282,15 @@
   "openInGitHub.remote.branch": "master", // Name of the remote branch
   "openInGitHub.remote.name": "origin", // Name of the remote repository
   "openInGitHub.useLocalBranch": true, // Use the local branch instead of the fixed remote branch
+  "openInGitHub.useLocalDomain": false, // Use the local domain instead of the fixed github domain
   "openInGitHub.useLocalLine": false,
   "openInGitHub.useLocalRange": true, // Highlight the local selection range, if there's one
   "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+  "prettier.ignorePath": ".gitignore",
   "prettier.semi": true,
   "prettier.singleQuote": true,
+  "prisma.showPrismaDataPlatformNotification": false,
   // 项目文件路径
   "projectManager.git.baseFolders": ["$home/workspace"],
   "projectManager.sortList": "Name",
@@ -304,6 +325,7 @@
     "cSpell.enableFiletypes",
     "cSpell.userWords"
   ],
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
   "svg.preview.mode": "svg",
   "terminal.external.osxExec": "kitty.app",
   "terminal.integrated.env.osx": {
@@ -444,6 +466,11 @@
       // sneak  让s S 恢复为最原始的功能
       "before": ["S"],
       "after": ["^", "C"]
+    },
+    {
+      // 基于%删除函数
+      "before": ["leader", "d", "f"],
+      "after": ["V", "$", "%", "d"]
     }
   ],
   "vim.operatorPendingModeKeyBindingsNonRecursive": [
@@ -526,6 +553,7 @@
   "workbench.settings.editor": "json",
   // "workbench.startupEditor": "newUntitledFile",
   "workbench.startupEditor": "readme",
+  "workbench.tree.enableStickyScroll": true,
   "zenMode.hideActivityBar": false,
   // "zenMode.hideTabs": false,
   // "window.zoomLevel": 1,
@@ -572,6 +600,7 @@
     "jsapi",
     "karabiner",
     "keylayout",
+    "liveish",
     "lutra",
     "mdast",
     "Menlo",
