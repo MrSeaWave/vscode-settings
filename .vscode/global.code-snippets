@@ -77,6 +77,11 @@
     ]
   },
   // ========================== TS ==========================
+  // React.FC 可能不是好的方式 https://github.com/facebook/create-react-app/pull/8177, 但是我记得使用 (props:Props) 会TS 解析失败，待看看
+  // https://dev.to/itswillt/explaining-reacts-types-940
+  // https://www.totaltypescript.com/jsx-element-vs-react-reactnode
+  // (props：Props):React.JSX.Element => {} 返回类型不该使用 React.JSX.Element
+  //       "export const ${1:${TM_FILENAME_BASE}}:React.FC<Props> = memo((props) => {",
   "tsReactFunctionMemoComponentWithDisplayName": {
     "description": "Creates a React Memo Function Component with ES7 module system with displayName",
     "scope": "typescript,typescriptreact",
@@ -86,7 +91,11 @@
       "",
       "interface Props {}",
       "",
-      "export const ${1:${TM_FILENAME_BASE}}:React.FC<Props> = memo((props) => {",
+      // 变量转换
+      // https://www.cnblogs.com/JourneyOfFlower/p/16593945.html,转成大驼峰
+      // https://gist.github.com/natemoo-re/94cfba2bfb17cbeec0680c05309ea9ee
+      // https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variable-transforms
+      "export const ${1:${TM_FILENAME_BASE/(\\w+)?[-_\\s]+(\\w+)/${1:/capitalize}${2:/capitalize}/g}} = memo((props:Props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
@@ -101,18 +110,18 @@
     "scope": "typescript,typescriptreact",
     "prefix": "tsrfmdForwardRef",
     "body": [
-      "import React, { forwardRef, memo } from 'react'",
+      "import React, { forwardRef, memo, ForwardRefRenderFunction } from 'react'",
       "",
       "interface Props {}",
       "",
       // "type RefType=HTMLDivElement",
       "",
-      "function Component(props: Props, ref: React.LegacyRef<HTMLDivElement>) {",
+      "function _Component(props: Props, ref: React.ForwardedRef<HTMLDivElement>) {",
       "  return <div ref={ref}>Component</div>;",
       "}",
       "",
       // "export const ${1:${TM_FILENAME_BASE}} = memo(forwardRef<RefType,Props>(Component));",
-      "export const ${1:${TM_FILENAME_BASE}} = memo(forwardRef(Component));",
+      "export const ${1:${TM_FILENAME_BASE}} = memo(forwardRef(_Component));",
       "",
       "${1:${TM_FILENAME_BASE}}.displayName = '${1:${TM_FILENAME_BASE}}';"
     ]

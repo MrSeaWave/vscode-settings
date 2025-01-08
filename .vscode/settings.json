@@ -1,6 +1,16 @@
 {
+  "Lua.format.defaultConfig": {
+    "indent_size": "4",
+    // https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/docs/format_config.md
+    "indent_style": "space",
+    "quote_style": "single"
+  },
+  "Lua.format.enable": true,
   "[css]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    // 新版 stylelint 不再支持代码风格格式化，推荐使用 prettier
+    // https://stylelint.io/migration-guide/to-15/#deprecated-stylistic-rules
+    // "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -15,7 +25,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[less]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
@@ -27,7 +37,7 @@
     "editor.defaultFormatter": "Prisma.prisma"
   },
   "[scss]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -188,6 +198,41 @@
           "settings": {
             "foreground": "#C3D3DE"
           }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Property Definition Variable",
+          "scope": [
+            "meta.definition.property.js variable",
+            "meta.definition.property.ts variable",
+            "meta.definition.property.jsx variable",
+            "meta.definition.property.tsx variable"
+          ],
+          "settings": {
+            "foreground": "#E06C75"
+          }
+        }
+      ]
+    },
+    "[Gruvbox Dark Soft]": {
+      "types": {
+        "fontStyle": "italic"
+      }
+    },
+    "[One Dark Pro]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "entity.name.type"
+            // "entity.name.class",
+            // "support.class",
+            // "support.type",
+            // "support.typedefinition",
+            // "support.variable.type"
+          ],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#98C379"
+          }
         }
       ]
     }
@@ -223,9 +268,6 @@
   // 文件嵌套,支持按名称去让文件按照一定规则展开收起
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
-  "explorer.fileNesting.patterns": {
-    // "index.ts": "${dirname}.tsx,${dirname}.*.scss,style.*.scss,style.scss"
-  },
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "extensions.ignoreRecommendations": false,
   "fileheader.configObj": {
@@ -271,6 +313,7 @@
     "**/node_modules/**": true
   },
   "git.openRepositoryInParentFolders": "never", // Highlight the local line if there's no selection range
+  "gitlab.duoCodeSuggestions.additionalLanguages": [],
   "gitlens.advanced.messages": {
     // "suppressShowKeyBindingsNotice": true
   },
@@ -296,6 +339,14 @@
   "prisma.showPrismaDataPlatformNotification": false,
   // 项目文件路径
   "projectManager.git.baseFolders": ["$home/workspace"],
+  "projectManager.git.ignoredFolders": [
+    "node_modules",
+    "out",
+    "typings",
+    "test",
+    ".haxelib",
+    "Archive"
+  ],
   "projectManager.sortList": "Name",
   "redhat.telemetry.enabled": true,
   "remote.SSH.remotePlatform": {
@@ -332,7 +383,8 @@
   "svg.preview.mode": "svg",
   "terminal.external.osxExec": "kitty.app",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+    "FIG_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
   },
   "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/.docusaurus"],
   "todo-tree.general.tags": [
@@ -354,6 +406,7 @@
   "todo-tree.tree.showScanModeButton": false,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescriptExplorer.typeTree.view.show.typeParameters": false,
   "update.showReleaseNotes": false,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
   "vim.autoSwitchInputMethod.enable": true,
@@ -537,12 +590,17 @@
     //鼠标单击选中后的颜色
     // "editor.selectionHighlightBackground": "#ffffff10",
     // "editor.selectionHighlightBorder": "#ddd",
+    // Atom one dark --->
     "editorUnnecessaryCode.border": "#59626f",
+    "list.activeSelectionBackground": "#59626f",
     "list.inactiveFocusOutline": "#3080F7",
     "panel.background": "#282C34",
     "sideBar.background": "#282C34",
     "statusBar.background": "#282C34",
     "tab.activeBackground": "#4E545E" //活动选项卡的背景色
+    // <--- Atom one dark
+    // "editor.foldBackground": "#f0f0f0", // 折叠代码的背景颜色
+    // "editorGutter.foldingControlForeground": "#ff0000" // 折叠图标的颜色
     // "list.inactiveSelectionBackground": "#d8ca9e" //侧边栏选中未获得焦点颜色
     // "list.inactiveSelectionBackground": "#3080F7" //侧边栏选中未获得焦点颜色
   },
@@ -564,8 +622,11 @@
   "zenMode.hideStatusBar": false,
   "cSpell.enableFiletypes": ["wxml"],
   "cSpell.userWords": [
+    "abtest",
     "ahooks",
     "antd",
+    "Apms",
+    "autocannon",
     "browserslist",
     "cjson",
     "codetour",
@@ -573,6 +634,7 @@
     "corepack",
     "customfield",
     "databoard",
+    "dependi",
     "Diffable",
     "dingtalk",
     "docgen",
@@ -584,6 +646,7 @@
     "execa",
     "fileheader",
     "foldfix",
+    "formily",
     "garena",
     "gitbeaker",
     "GOOGLEPLUS",
@@ -591,17 +654,21 @@
     "healthcheck",
     "highlightedyank",
     "hlsearch",
+    "hmset",
     "Hocs",
     "Hotspot",
     "hotspots",
+    "httpc",
     "iframe",
     "ignorecase",
     "IIFE",
     "imbot",
     "immer",
     "interruptible",
+    "isfe",
     "jsapi",
     "karabiner",
+    "kaya",
     "keylayout",
     "liveish",
     "lutra",
@@ -636,9 +703,11 @@
     "readwrite",
     "reduxjs",
     "removeprefix",
+    "resty",
     "rfmd",
     "rgba",
     "rmcd",
+    "sadd",
     "searc",
     "seatalk",
     "shopee",
@@ -661,6 +730,7 @@
     "umijs",
     "umirc",
     "Underride",
+    "undici",
     "unfollow",
     "Unitless",
     "unmount",
