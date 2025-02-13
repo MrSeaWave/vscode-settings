@@ -3,7 +3,7 @@
     "indent_size": "4",
     // https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/docs/format_config.md
     "indent_style": "space",
-    "quote_style": "single"
+    "quote_style": "double"
   },
   "Lua.format.enable": true,
   "[css]": {
@@ -29,6 +29,7 @@
   },
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
+    // "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -51,6 +52,7 @@
   "codetour.showMarkers": true,
   "debug.javascript.autoAttachFilter": "disabled",
   "debug.toolBarLocation": "docked",
+  "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.accessibilitySupport": "off",
   // 启用本地括号匹配
@@ -313,7 +315,10 @@
     "**/node_modules/**": true
   },
   "git.openRepositoryInParentFolders": "never", // Highlight the local line if there's no selection range
+  "gitlab.duoChat.enabled": false,
   "gitlab.duoCodeSuggestions.additionalLanguages": [],
+  "gitlab.duoCodeSuggestions.enabled": false,
+  "gitlab.keybindingHints.enabled": false,
   "gitlens.advanced.messages": {
     // "suppressShowKeyBindingsNotice": true
   },
@@ -402,7 +407,7 @@
       "type": "line"
     }
   },
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.regex.regex": "(//|#|--|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.tree.showScanModeButton": false,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -585,6 +590,8 @@
   "vscode-office.openOutline": true,
   "window.commandCenter": false,
   "workbench.colorCustomizations": {
+    // 自定义折叠区块的颜色
+    // "editor.foldBackground": "#FFD700",
     //设置用户选中代码段的颜色,鼠标双击选中后的颜色
     // "editor.selectionBackground": "#2919ff",
     //鼠标单击选中后的颜色
@@ -627,11 +634,14 @@
     "antd",
     "Apms",
     "autocannon",
+    "Beeshop",
     "browserslist",
+    "bundlejs",
     "cjson",
     "codetour",
     "commitlint",
     "corepack",
+    "csrftoken",
     "customfield",
     "databoard",
     "dependi",
@@ -702,6 +712,7 @@
     "rcompare",
     "readwrite",
     "reduxjs",
+    "Referer",
     "removeprefix",
     "resty",
     "rfmd",
@@ -739,6 +750,7 @@
     "visualline",
     "VITE",
     "webp",
+    "webviewhost",
     "wxml",
     "wxss",
     "xprofile",
